@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   // Se le agregan los elementos que va a tener el formulario
   personForm = new FormGroup({
-    id: new FormControl('', Validators.required),
+    id: new FormControl(''),
     name: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     age: new FormControl('', Validators.required),
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 
   countries: any; // List of countries
   states: any; // List of states
-  person: any; // List of person
+  persons: any; // List of person
 
   constructor(
     public fb: FormBuilder,
@@ -45,35 +45,35 @@ export class AppComponent implements OnInit {
     this.getALlPersons();
   }
 
-  getAllCountries() {
+  getAllCountries(): void {
     this.countryService.getAllCountries()
       .subscribe(resp => {
         this.countries = resp;
       }
         , error => {
-          console.log('Error loading countries: ', error);
+          console.error('Error loading countries: ', error);
         }
       )
   }
 
-  loadStatesByCountryId(value: any) {
+  loadStatesByCountryId(value: any): void {
     this.stateService.getStatesByCountry(value)
       .subscribe(resp => {
         this.states = resp;
       }
         , error => {
-          console.log('Error loading states: ', error);
+          console.error('Error loading states: ', error);
         }
       )
   }
 
-  getALlPersons() {
+  getALlPersons(): void {
     this.personService.getALlPersons()
       .subscribe(resp => {
-        this.person = resp;
+        this.persons = resp;
       }
         , error => {
-          console.log('Error loading persons: ', error);
+          console.error('Error loading persons: ', error);
         }
       )
   }
@@ -82,10 +82,35 @@ export class AppComponent implements OnInit {
     this.personService.savePerson(this.personForm.value)
       .subscribe(resp => {
         this.personForm.reset(); // Reset form values
+        this.persons = this.persons.filter((item: any) => resp.id != item.id);
+        this.persons.push(resp); // Added person to show table real time
       }
         , error => {
-          console.log('Error saving the person: ', error);
+          console.error('Error saving the person: ', error);
         }
       )
+  }
+
+  deletePerson(person: any): void {
+    this.personService.deletePerson(person.id)
+      .subscribe(resp => {
+        (resp) ? this.persons.pop() : ''; // If person is delete
+      }
+        , error => {
+          console.error('Error deleting the person: ', error);
+        }
+      )
+  }
+
+  editPerson(person: any): void {
+    this.personForm.setValue({
+      id: person.id,
+      name: person.name,
+      lastName: person.lastName,
+      age: person.age,
+      country: person.country,
+      state: person.state,
+    });
+
   }
 }
