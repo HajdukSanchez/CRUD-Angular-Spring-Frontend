@@ -1,27 +1,27 @@
-# CrudSpringAngular
+# CRUD-Angular-Spring | Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## Development server
+In this project I learned and connect a Spring boot endpoints and a simple angular CRUD.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is the [Backend](https://github.com/HajdukSanchez/CRUD-Angular-Spring-Backend)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🚧 Built With
+Technologies of the project
+* HTML
+* SASS
+* TS
+* JS
 
-## Build
+<!-- CONTACT -->
+## 📫 Contact
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Jozek Hajduk - hajduksanchez.dev@gmail.com
 
-## Running unit tests
+Project Link: [https://github.com/HajdukSanchez/CRUD-Angular-Spring-Frontend](https://github.com/HajdukSanchez/CRUD-Angular-Spring-Frontend)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[<img align="left" alt="LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/jozek-hajduk/)
+[<img align="left" alt="Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />](https://twitter.com/HajdukJozek)
+[<img align="left" alt="GitHub" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />](https://github.com/HajdukSanchez)
